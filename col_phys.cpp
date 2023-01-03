@@ -2,7 +2,7 @@
 //
 
 #define PY_SSIZE_T_CLEAN
-#include <Python.h>
+#include "Python.h"
 
 #include <iostream>
 using namespace std;
@@ -27,7 +27,7 @@ static PyMethodDef SpamMethods[] = {
 static struct PyModuleDef spammodule = {
     PyModuleDef_HEAD_INIT,
     "spam",   /* name of module */
-    spam_doc, /* module documentation, may be NULL */
+    NULL, /* module documentation, may be NULL */
     -1,       /* size of per-interpreter state of the module,
                  or -1 if the module keeps state in global variables. */
     SpamMethods
