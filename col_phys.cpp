@@ -2,10 +2,9 @@
 //
 
 #define PY_SSIZE_T_CLEAN
-#include "Python.h"
+#include <Python.h>
 
 #include <iostream>
-using namespace std;
 
 static PyObject *spam_system(PyObject *self, PyObject *args)
 {
@@ -36,12 +35,12 @@ static struct PyModuleDef spammodule = {
 PyMODINIT_FUNC PyInit_spam(void)
 {
     return PyModule_Create(&spammodule);
-}
+};
 
 int main() {
 
 
-    cout << "Hello World!" << endl;
+    std::cout << "Hello World!" << std::endl;
 
     return 0;
 }
